@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from "react-dom";
+import Header from '../Common/Header.jsx'
 
 const Page = () => {
     return (
         <div id="page-content">
-        Hello React!
+            <Header />
         </div>
     );
 };
