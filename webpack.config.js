@@ -46,8 +46,17 @@ console.log('NODE_ENV: ', env.NODE_ENV); // 'local'
         },
         plugins: [
             new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html"
+                template: "./src/index.html",
+                filename: "./index.html",
+                minify: {
+                  collapseWhitespace: env.NODE_ENV === 'production',
+                  preserveLineBreaks: env.NODE_ENV === 'production',
+                  removeComments: env.NODE_ENV === 'production',
+                  removeScriptTypeAttributes: env.NODE_ENV === 'production',
+                  removeStyleLinkTypeAttributes: env.NODE_ENV === 'production',
+                  useShortDoctype: env.NODE_ENV === 'production',
+                  removeRedundantAttributes: env.NODE_ENV === 'production',
+                }
             })
         ]
     }
