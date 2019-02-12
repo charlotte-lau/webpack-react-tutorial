@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Input from "../presentational/Input.jsx";
-import style from '../../../scss/index.scss'
+import style from './index.scss'
 
 class FormContainer extends Component {
     constructor() {
       super();
       this.state = {
-        seo_title: ""
+        seo_title: "wq"
       };
       this.handleChange = this.handleChange.bind(this);
     }
