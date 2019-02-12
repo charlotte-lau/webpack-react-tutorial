@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Input from "../presentational/Input.jsx";
+import style from '../../../scss/index.scss'
 
 class FormContainer extends Component {
     constructor() {
