@@ -1,6 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = env => {
-console.log('NODE_ENV: ', env.NODE_ENV); // 'local'
     return {
         output: {
             path:__dirname + '/build'
