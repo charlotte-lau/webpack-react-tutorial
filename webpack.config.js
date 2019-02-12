@@ -1,35 +1,54 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-module.exports = {
-    output: {
-        path:__dirname + '/build'
-    },
-    module: {
-        rules: [
-        {
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: {
-            loader: "babel-loader"
-            }
+module.exports = env => {
+console.log('NODE_ENV: ', env.NODE_ENV); // 'local'
+    return {
+        output: {
+            path:__dirname + '/build'
         },
-        {
-            test: /\.html$/,
-            use: [
+        module: {
+            rules: [
             {
-                loader: "html-loader"
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.html$/,
+                use: [
+                {
+                    loader: "html-loader"
+                }
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader:'style-loader'
+                    },
+                    {
+                        loader:'css-loader', 
+                        options: {
+                            sourceMap: env.NODE_ENV !== 'production'
+                        }
+                    },
+                    {
+                        loader:'sass-loader', 
+                        options: {
+                            sourceMap: env.NODE_ENV !== 'production'
+                        }
+                    }
+                ]
             }
             ]
         },
-        {
-            test: /\.scss$/,
-            use: ['style-loader', 'css-loader','sass-loader']
-        }
+        plugins: [
+            new HtmlWebPackPlugin({
+            template: "./src/index.html",
+            filename: "./index.html"
+            })
         ]
-    },
-    plugins: [
-        new HtmlWebPackPlugin({
-        template: "./src/index.html",
-        filename: "./index.html"
-        })
-    ]
+    }
 };

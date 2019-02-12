@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development --port 8888",
-    "build": "webpack --mode production"
+    "start": "webpack-dev-server --open --env.NODE_ENV=local --mode development --port 8888",
+    "build": "webpack --env.NODE_ENV=production --mode production"
   },
   "keywords": [],
   "author": "",
