@@ -1,6 +1,12 @@
+@import '~bootstrap/scss/bootstrap.scss';
 $navy: #001e38;
 $green: #15b78f;
 
 html {
-  background-color: $navy;
+  background-color: $green;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
 }

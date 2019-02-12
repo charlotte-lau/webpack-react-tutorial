@@ -7,7 +7,7 @@ class FormContainer extends Component {
     constructor() {
       super();
       this.state = {
-        seo_title: "wq"
+        seo_title: ""
       };
       this.handleChange = this.handleChange.bind(this);
     }
