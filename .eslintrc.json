@@ -28,6 +28,20 @@
         "semi": [
             "error",
             "always"
+        ],
+        "no-console": 1,
+        "comma-dangle": 0,
+        "no-param-reassign": 0,
+        "arrow-body-style": 0,
+        "no-restricted-syntax": 0,
+        "class-methods-use-this": 0,
+        "no-underscore-dangle": 0,
+        "max-len": [
+            "error",
+            {
+                "ignoreUrls": true,
+                "code": 120
+            }
         ]
     }
 }
