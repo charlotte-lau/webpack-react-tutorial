@@ -4,10 +4,12 @@ import Input from "../Common/Input.jsx";
 import style from './index.scss'
 
 class FormContainer extends Component {
-    constructor() {
+    constructor(props) {
       super();
+      console.log();
       this.state = {
-        seo_title: ""
+        seo_title: "",
+        id: props.match.params.id
       };
       this.handleChange = this.handleChange.bind(this);
     }
@@ -19,7 +21,7 @@ class FormContainer extends Component {
       return (
         <form id="article-form">
           <Input
-            text="SEO title! "
+            text={"Form #" + this.state.id}
             label="seo_title"
             type="text"
             id="seo_title"
